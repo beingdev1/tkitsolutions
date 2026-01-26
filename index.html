@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TK IT Solutions - Professional IT Support & Services</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
+            color: white;
+            padding: 0.8rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.15);
+        }
+
+        nav {
+            max-width: 1200px;
+            margin: auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 2rem;
+        }
+
+        /* Logo */
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .logo img {
+            height: 45px;
+            width: auto;
+            border-radius: 6px;
+            background: white;
+            padding: 4px;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 2rem;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        nav a:hover {
+            opacity: 0.85;
+        }
+
+        /* Hero */
+        .hero {
+            background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
+            color: white;
+            padding: 8rem 2rem 4rem;
+            text-align: center;
+            margin-top: 70px;
+        }
+
+        .hero h1 {
+            font-size: 2.6rem;
+            margin-bottom: 1rem;
+        }
+
+        .hero p {
+            font-size: 1.15rem;
+            margin-bottom: 2rem;
+        }
+
+        .cta-button {
+            background: white;
+            color: #1e3a8a;
+            padding: 1rem 2rem;
+            border-radius: 6px;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        /* Sections */
+        section {
+            padding: 4rem 2rem;
+        }
+
+        .services,
+        .contact {
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        h2 {
+            text-align: center;
+            color: #1e3a8a;
+            margin-bottom: 3rem;
+            font-size: 2rem;
+        }
+
+        .service-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .service-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .service-card h3 {
+            margin-bottom: 1rem;
+            color: #1e3a8a;
+        }
+
+        .about {
+            background: #f8fafc;
+            text-align: center;
+        }
+
+        .about p {
+            max-width: 800px;
+            margin: auto;
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+
+        .contact-info {
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .contact-item {
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+
+        footer {
+            background: #1e293b;
+            color: white;
+            text-align: center;
+            padding: 2rem;
+        }
+
+        @media (max-width: 768px) {
+            nav ul {
+                gap: 1rem;
+                font-size: 0.9rem;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <nav>
+        <div class="logo">
+            <img src="assets/logo.png" alt="TK IT Solutions Logo">
+        </div>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+</header>
+
+<section id="home" class="hero">
+    <h1>Professional IT Support & Managed Services</h1>
+    <p>Reliable, secure, and scalable IT solutions for Australian businesses</p>
+    <a href="#contact" class="cta-button">Get Started Today</a>
+</section>
+
+<section id="services" class="services">
+    <h2>Our Services</h2>
+    <div class="service-grid">
+        <div class="service-card">
+            <h3>Managed IT Services</h3>
+            <p>End-to-end IT management, monitoring, and proactive support.</p>
+        </div>
+        <div class="service-card">
+            <h3>Cybersecurity</h3>
+            <p>Firewalls, endpoint protection, and security best practices.</p>
+        </div>
+        <div class="service-card">
+            <h3>Cloud Solutions</h3>
+            <p>Microsoft 365, Azure, backups, and cloud migrations.</p>
+        </div>
+    </div>
+</section>
+
+<section id="about" class="about">
+    <h2>About TK IT Solutions</h2>
+    <p>
+        TK IT Solutions provides reliable, modern IT support for small to medium businesses
+        across Australia, focusing on security, performance, and long-term partnerships.
+    </p>
+</section>
+
+<section id="contact" class="contact">
+    <h2>Get In Touch</h2>
+    <div class="contact-info">
+        <div class="contact-item">📧 info@tkitsolutions.com.au</div>
+        <div class="contact-item">📱 +61 XXX XXX XXX</div>
+        <div class="contact-item">📍 Australia-wide Services</div>
+    </div>
+</section>
+
+<footer>
+    <p>© 2026 TK IT Solutions. All rights reserved.</p>
+</footer>
+
+</body>
+</html>
+
