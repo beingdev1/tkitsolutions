@@ -30,16 +30,13 @@
             box-shadow: 0 2px 10px rgba(0,0,0,0.15);
         }
 
-       
-           nav {
-    max-width: 1200px;
-    margin: 0 auto;
-    display: flex;
-    align-items: center;   /* THIS is key */
-    justify-content: space-between;
-    padding: 0 2rem;
-
-
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 2rem;
         }
 
         /* Logo */
@@ -49,13 +46,12 @@
             gap: 0.75rem;
         }
 
-            .logo img {
-             height: 85px;
-    width: auto;
-    background: transparent;
-    padding: 0;
-    filter: drop-shadow(0 4px 8px rgba(0,0,0,0.25));
-
+        .logo img {
+            height: 85px;
+            width: auto;
+            background: transparent;
+            padding: 0;
+            filter: drop-shadow(0 4px 8px rgba(0,0,0,0.25));
         }
 
         nav ul {
@@ -68,6 +64,7 @@
             color: white;
             text-decoration: none;
             font-weight: 500;
+            transition: opacity 0.3s;
         }
 
         nav a:hover {
@@ -91,15 +88,23 @@
         .hero p {
             font-size: 1.15rem;
             margin-bottom: 2rem;
+            opacity: 0.95;
         }
 
         .cta-button {
+            display: inline-block;
             background: white;
             color: #1e3a8a;
             padding: 1rem 2rem;
             border-radius: 6px;
             font-weight: bold;
             text-decoration: none;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
         }
 
         /* Sections */
@@ -131,35 +136,111 @@
             padding: 2rem;
             border-radius: 8px;
             box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.15);
         }
 
         .service-card h3 {
             margin-bottom: 1rem;
             color: #1e3a8a;
+            font-size: 1.3rem;
+        }
+
+        .service-card p {
+            color: #64748b;
+            line-height: 1.7;
+        }
+
+        .service-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
         }
 
         .about {
             background: #f8fafc;
-            text-align: center;
+        }
+
+        .about-content {
+            max-width: 900px;
+            margin: 0 auto;
         }
 
         .about p {
-            max-width: 800px;
-            margin: auto;
-            margin-bottom: 1rem;
+            margin-bottom: 1.5rem;
             font-size: 1.1rem;
+            line-height: 1.8;
+            color: #475569;
+        }
+
+        .about-highlights {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .highlight-card {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            text-align: center;
+        }
+
+        .highlight-icon {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .highlight-card h3 {
+            color: #1e3a8a;
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .highlight-card p {
+            font-size: 0.95rem;
+            color: #64748b;
+            margin: 0;
         }
 
         .contact-info {
             background: white;
-            padding: 2rem;
+            padding: 2.5rem;
             border-radius: 8px;
             box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            max-width: 700px;
+            margin: 0 auto;
         }
 
         .contact-item {
-            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
             font-size: 1.1rem;
+            padding: 1rem;
+            background: #f8fafc;
+            border-radius: 6px;
+        }
+
+        .contact-item span {
+            font-weight: bold;
+            color: #1e3a8a;
+            min-width: 100px;
+        }
+
+        .contact-item a {
+            color: #3b82f6;
+            text-decoration: none;
+        }
+
+        .contact-item a:hover {
+            text-decoration: underline;
         }
 
         footer {
@@ -167,6 +248,11 @@
             color: white;
             text-align: center;
             padding: 2rem;
+            margin-top: 4rem;
+        }
+
+        footer p {
+            margin-bottom: 0.5rem;
         }
 
         @media (max-width: 768px) {
@@ -178,6 +264,14 @@
             .hero h1 {
                 font-size: 2rem;
             }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            .logo img {
+                height: 65px;
+            }
         }
     </style>
 </head>
@@ -185,11 +279,9 @@
 <body>
 
 <header>
-    
     <nav>
         <div class="logo">
-            
-            <img src="logo.png" alt="TK IT Solutions Logo" padding: 1.2rem 0;>
+            <img src="logo.png" alt="TK IT Solutions Logo">
         </div>
         <ul>
             <li><a href="#home">Home</a></li>
@@ -210,45 +302,109 @@
     <h2>Our Services</h2>
     <div class="service-grid">
         <div class="service-card">
+            <div class="service-icon">🖥️</div>
             <h3>Managed IT Services</h3>
-            <p>End-to-end IT management, monitoring, and proactive support.</p>
+            <p>Complete IT management including proactive monitoring, maintenance, updates, and ongoing support to keep your systems running smoothly and securely.</p>
         </div>
         <div class="service-card">
+            <div class="service-icon">🔒</div>
             <h3>Cybersecurity</h3>
-            <p>Firewalls, endpoint protection, and security best practices.</p>
+            <p>Comprehensive security solutions including firewall management, endpoint protection, antivirus deployment, security audits, and threat prevention to safeguard your business.</p>
         </div>
         <div class="service-card">
+            <div class="service-icon">☁️</div>
             <h3>Cloud Solutions</h3>
-            <p>Microsoft 365, Azure, backups, and cloud migrations.</p>
+            <p>Expert cloud migration, management, and optimization for Microsoft 365, Azure, Google Workspace, and cloud backup solutions to enhance productivity and accessibility.</p>
+        </div>
+        <div class="service-card">
+            <div class="service-icon">🌐</div>
+            <h3>Network Setup & Support</h3>
+            <p>Professional design, implementation, and ongoing support for business networks, WiFi systems, VPNs, and complete infrastructure management.</p>
+        </div>
+        <div class="service-card">
+            <div class="service-icon">📞</div>
+            <h3>Help Desk Support</h3>
+            <p>Fast, reliable technical support when you need it most. Remote assistance and on-site visits available to resolve issues quickly and minimize downtime.</p>
+        </div>
+        <div class="service-card">
+            <div class="service-icon">💾</div>
+            <h3>Backup & Disaster Recovery</h3>
+            <p>Robust backup solutions and disaster recovery planning to ensure business continuity. Automated backups, secure storage, and rapid restoration capabilities.</p>
         </div>
     </div>
 </section>
 
 <section id="about" class="about">
-    <h2>About TK IT Solutions</h2>
-    <p>
-        TK IT Solutions provides reliable, modern IT support for small to medium businesses
-        across Australia, focusing on security, performance, and long-term partnerships.
-    </p>
+    <div class="about-content">
+        <h2>About TK IT Solutions</h2>
+        <p>
+            TK IT Solutions is your trusted IT partner, providing professional managed service provider (MSP) solutions tailored for small to medium businesses across Australia. With years of experience in IT support and infrastructure management, we deliver personalized service that larger firms simply can't match.
+        </p>
+        <p>
+            We understand that every business has unique technology needs and challenges. That's why we take the time to understand your operations, goals, and pain points before recommending solutions. Your success is our priority, and we're committed to being responsive, reliable, and proactive in managing your IT environment.
+        </p>
+        <p>
+            Whether you need comprehensive managed IT services, project-based support, or assistance with a specific technology challenge, TK IT Solutions offers flexible, cost-effective services designed to keep your business running smoothly and securely.
+        </p>
+
+        <div class="about-highlights">
+            <div class="highlight-card">
+                <div class="highlight-icon">⚡</div>
+                <h3>Fast Response Times</h3>
+                <p>Quick support when you need it most, minimizing downtime and disruption</p>
+            </div>
+            <div class="highlight-card">
+                <div class="highlight-icon">🎯</div>
+                <h3>Personalized Service</h3>
+                <p>Direct access to an experienced IT professional who knows your business</p>
+            </div>
+            <div class="highlight-card">
+                <div class="highlight-icon">🛡️</div>
+                <h3>Proactive Approach</h3>
+                <p>Preventing issues before they become problems through monitoring and maintenance</p>
+            </div>
+            <div class="highlight-card">
+                <div class="highlight-icon">💰</div>
+                <h3>Cost-Effective</h3>
+                <p>Professional IT support without the overhead of a full-time IT department</p>
+            </div>
+        </div>
+    </div>
 </section>
 
 <section id="contact" class="contact">
     <h2>Get In Touch</h2>
     <div class="contact-info">
-        <div class="contact-item">📧 info@tkitsolutions.com.au</div>
-        <div class="contact-item">📱 +61 XXX XXX XXX</div>
-        <div class="contact-item">📍 Australia-wide Services</div>
+        <div class="contact-item">
+            <span>📧 Email:</span>
+            <a href="mailto:info@tkitsolutions.com.au">info@tkitsolutions.com.au</a>
+        </div>
+        <div class="contact-item">
+            <span>📱 Phone:</span>
+            <a href="tel:+61XXXXXXXXX">+61 XXX XXX XXX</a>
+        </div>
+        <div class="contact-item">
+            <span>📍 Service Area:</span>
+            <span>Servicing businesses across Australia</span>
+        </div>
+        <div class="contact-item">
+            <span>⏰ Hours:</span>
+            <span>Monday - Friday: 9:00 AM - 6:00 PM AEST</span>
+        </div>
+        <div class="contact-item">
+            <span>💬 Inquiry:</span>
+            <span>Free consultation available - let's discuss your IT needs</span>
+        </div>
     </div>
 </section>
 
 <footer>
-    <p>© 2026 TK IT Solutions. All rights reserved.</p>
+    <p>&copy; 2026 TK IT Solutions. All rights reserved.</p>
+    <p>ABN: XX XXX XXX XXX | Professional IT Support & Managed Services</p>
+    <p style="margin-top: 1rem; font-size: 0.9rem; opacity: 0.8;">
+        Servicing businesses across Australia with reliable, secure, and scalable IT solutions
+    </p>
 </footer>
 
 </body>
 </html>
-
-
-
-
-
